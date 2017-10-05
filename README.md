@@ -6,9 +6,9 @@ To use the app on any local machine, go the URL: https://Subreddit-Search.heroku
 Please make sure you are connected to the Internet.
 
 -index.html : home page <br/>
--search.html : search page
--style.css : CSS3
--red.jpg : background image
+-search.html : search page <br/>
+-style.css : CSS3 <br/>
+-red.jpg : background image <br/><br/>
 
 
 
