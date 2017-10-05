@@ -20,33 +20,29 @@
                 <div class="form-group searchBox">
                    <input type="text" class="form-control input-lg search"  placeholder="r/umass or umass"><br><br>
                    <button class='btn btn-lg btn-primary submit'>Search</button>
-                    <p id='error'>p</p>
                 </div>
-                
            </form>
         </div>
-
-        <script>
-            // called by form when it is submitted; takes the value of the search box, put it in the local storage so that it can
-            // be accessed from another oage and redirects to that page
-            function redirect(){
-                var search = document.querySelector('.search');
-                var submit = document.querySelector('.submit');
-
-                var subName = search.value;
-                if(subName.length === 0){
-                    var e = document.getElementById('error');
-                    e.innerHTML = 'Please type at least one letter';
-                    continue;
-                }
-                if(subName.length > 2 && subName.charAt(0) === 'r' && subName.charAt(1) ==='/') subName = subName.substr(2);
-                localStorage.setItem("sub",subName);
-
-                location.href='search.html';
-            }
-        </script>
     </body>
+    
+    <script>
+        // called by form when it is submitted; takes the value of the search box, put it in the local storage so that it can
+        // be accessed from another oage and redirects to that page
+        function redirect(){
+            var search = document.querySelector('.search');
+            var submit = document.querySelector('.submit');
+
+            var subName = search.value;
+            
+            if(subName.length > 2 && subName.charAt(0) === 'r' && subName.charAt(1) ==='/') subName = subName.substr(2);
+            localStorage.setItem("sub",subName);
+
+            location.href='search.html';
+        }
+    </script>
+    
     <footer id='footer-main'>
         <p class="text-center text-muted">&copy; Copyright 2017 Farhan Rahman</p>
     </footer>
+    
 </html>
