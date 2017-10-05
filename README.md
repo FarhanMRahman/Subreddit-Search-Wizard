@@ -5,10 +5,18 @@ Frameworks Used: Javascript, HTML5, CSS3 and Bootstrap (UI Approach)
 To use the app on any local machine, go the URL: https://Subreddit-Search.herokuapp.com
 Please make sure you are connected to the Internet.
 
--index.html : home page\n
+-index.html : home page
+
+
 -search.html : search page
+
+
 -style.css : CSS3
+
+
 -red.jpg : background image
+
+
 
 
 
