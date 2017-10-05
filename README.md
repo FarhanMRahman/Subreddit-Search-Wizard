@@ -15,7 +15,7 @@ Please make sure you are connected to the Internet.
 
 
 
-This is a RESTful web application built with JavaScript, HTML5, CSS3 and Bootsrap. It fetches data from the Reddit API in JSON formatt and places them at appropriate places.
+This is a RESTful web application built with JavaScript, HTML5, CSS3 and Bootsrap. It fetches data from the Reddit API in JSON format and shows them at appropriate places.
 
 (On a side note, I wanted to work more on the server side code. But since I have three midterms before the deadline, I couldn't manage enough time. I'll definitely try to improve the app further in the future.)
 
