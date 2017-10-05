@@ -1,0 +1,23 @@
+#search-body, #header {padding: 50px 50px}
+#section {padding: 20px}
+#showingResult {font-size: 15px}
+#box {align-content: 'center'}
+#sub {font-size: 30px; font-weight: 'bold'}
+.post {margin-bottom: 20px}
+.center-block {text-align: 'center'}
+
+#main-body {
+    padding: 50px 50px;
+    background-image: url('red.jpg');
+    background-position: top center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+}
+#searchBox {margin: 0 20%}
+
+#footer-main{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}

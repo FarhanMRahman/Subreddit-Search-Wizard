@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Search</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css'>
+        <link rel='stylesheet' href='style.css'>
+    </head>
+
+    <body id='search-body'>
+        <div class='jumbotron' id='header'>
+            <div class="jumbotext" id='showingResult'>Showing Results For: </div>
+            <div class="jumbotext" id='sub'></div>
+            <div class="row">
+                <div>
+                    <br><input style="font-size: 18px" type="text" id ='box' class="form-control" rows='2' placeholder="Search For Another Subreddit"><br>
+                    <button type="button" class="btn btn-primary btn-lg" id='subm'>Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div id='section' >
+            
+        </div>
+    </body>
+
+    <footer>
+        <p class="text-center text-muted">&copy; Copyright 2017 Farhan Rahman</p>
+    </footer>
+
+    <script>
+        // receives the subreddit name from local storage and makes the url, uses Fetch API to get a response, converts it to JSON
+        // from that response stream, makes elements and sets on the HTML accordingly
+        // catches the error when subreddit is invalid
+        
+        var subName = localStorage.getItem("sub");
+        var sub = document.getElementById('sub');
+        sub.innerText = 'r/' + subName;
+        var requestURL = 'https://www.reddit.com/r/' + subName + '/.json';
+        var section = document.getElementById('section');
+            
+        fetch(requestURL)
+        .then((resp) => resp.json())
+        .then(function(posts){
+            var children = posts.data.children;
+
+            var post;
+            for(var i = 0; i < children.length; i++){
+                post = document.createElement('article');
+                post.setAttribute('class', 'post');
+                var postHeader = document.createElement('a');
+                var linkNode = document.createTextNode(children[i].data.title);
+                postHeader.appendChild(linkNode);
+                var postText = document.createElement('p');
+    
+                post.appendChild(postHeader);
+
+                var postedBy = document.createElement('p');
+                postedBy.innerHTML = 'Posted by ' + children[i].data.author; 
+                postedBy.style.color='black';
+                post.appendChild(postedBy);
+                        
+                postHeader.title = children[i].data.title;
+                postHeader.href = children[i].data.url;
+                postHeader.style.fontSize='x-large';
+                        
+                postText.textContent = children[i].data.selftext;
+                postText.style.fontSize='large';
+    
+                post.appendChild(postText);
+                       
+                section.appendChild(post);
+            }
+        })
+        .catch(function(){
+            var e = document.createElement('p');
+            e.innerHTML = "Sorry, the subreddit r/" + subName + " doesn't exist! Please try again.";
+            e.style.fontSize='large';
+            e.style.fontWeight='bold';
+            section.appendChild(e);
+        });
+
+        var box = document.getElementById('box');
+        var subm = document.getElementById('subm');
+
+        subm.addEventListener('click', function(){
+                
+        var subName = box.value;
+            if(subName.length > 2 && subName.charAt(0) == 'r' && subName.charAt(1) =='/') subName = subName.substr(2);
+            localStorage.setItem("sub",subName);
+
+            location.href='search.html';
+        });
+    </script>   
+</html>

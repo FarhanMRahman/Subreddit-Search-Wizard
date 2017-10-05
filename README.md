@@ -1,9 +1,10 @@
-# Subreddit Search Wizard
+//=======================//
+  ~SUBREDDIT SEARCH WIZARD~
+//=======================//
 
 Frameworks Used: Javascript, HTML5, CSS3 and Bootstrap (UI Approach)
 
-To use the app on any local machine, go the URL: https://Subreddit-Search.herokuapp.com
-Please make sure you are connected to the Internet.
+
 
 This is a RESTful web application built with JavaScript, HTML5, CSS3 and Bootsrap. It fetches data from the Reddit API in JSON formatt and places them at appropriate places.
 
