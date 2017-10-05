@@ -36,7 +36,7 @@
                 var subName = search.value;
                 if(subName.value.length === 0){
                     var e = document.getElementById('error');
-                    e.innerHTML = 'Please type at least one letter';
+                    e.innerText = 'Please type at least one letter';
                     continue;
                 }
                 if(subName.length > 2 && subName.charAt(0) === 'r' && subName.charAt(1) ==='/') subName = subName.substr(2);
