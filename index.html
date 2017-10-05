@@ -20,7 +20,7 @@
                 <div class="form-group searchBox">
                    <input type="text" class="form-control input-lg search"  placeholder="r/umass or umass"><br><br>
                    <button class='btn btn-lg btn-primary submit'>Search</button>
-                    <p id='error'></p>
+                    <p id='error'>p</p>
                 </div>
                 
            </form>
@@ -34,7 +34,7 @@
                 var submit = document.querySelector('.submit');
 
                 var subName = search.value;
-                if(subName.length === 1){
+                if(subName.length === 0){
                     var e = document.getElementById('error');
                     e.innerHTML = 'Please type at least one letter';
                     continue;
