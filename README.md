@@ -7,14 +7,12 @@ Please make sure you are connected to the Internet.
 
 -index.html : home page
 
-
 -search.html : search page
-
 
 -style.css : CSS3
 
-
 -red.jpg : background image
+
 
 
 
