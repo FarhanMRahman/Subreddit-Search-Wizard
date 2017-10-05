@@ -20,6 +20,7 @@
                 <div class="form-group searchBox">
                    <input type="text" class="form-control input-lg search"  placeholder="r/umass or umass"><br><br>
                    <button class='btn btn-lg btn-primary submit'>Search</button>
+                    <p id='error'></p>
                 </div>
                 
            </form>
@@ -33,7 +34,12 @@
                 var submit = document.querySelector('.submit');
 
                 var subName = search.value;
-                if(subName.length > 2 && subName.charAt(0) == 'r' && subName.charAt(1) =='/') subName = subName.substr(2);
+                if(subName.value.length === 0){
+                    var e = document.getElementById('error');
+                    e.innerHTML = 'Please type at least one letter';
+                    continue;
+                }
+                if(subName.length > 2 && subName.charAt(0) === 'r' && subName.charAt(1) ==='/') subName = subName.substr(2);
                 localStorage.setItem("sub",subName);
 
                 location.href='search.html';
